@@ -14,30 +14,29 @@ import {
   CTableRow,
   CButton,
 } from '@coreui/react'
-
-const Tables = (props) => {
+const TableDetails = (props) => {
+  const { tableHeading, CTableHeadList, ...rest } = props
   return (
     <CRow>
       <CCol xs={12}>
         <CCard className="mb-4">
           <CCardHeader>
-            <strong>User Details</strong>
+            <strong>{tableHeading}</strong>
           </CCardHeader>
           <CCardBody>
             <CRow className="align-items-center mb-3" key={0}>
               <CCol xs>
                 <CButton color={'primary'} key={1} active={true}>
-                  Add User
+                  Add
                 </CButton>
               </CCol>
             </CRow>
             <CTable bordered>
               <CTableHead>
                 <CTableRow>
-                  <CTableHeaderCell scope="col">#</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">User Name</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Role</CTableHeaderCell>
-                  <CTableHeaderCell scope="col">Action</CTableHeaderCell>
+                  {CTableHeadList.map((val,index)=>{
+                    return <CTableHeaderCell key={index} scope="col">{val}</CTableHeaderCell>
+                  })}
                 </CTableRow>
               </CTableHead>
               <CTableBody>
@@ -56,4 +55,4 @@ const Tables = (props) => {
   )
 }
 
-export default Tables
+export default TableDetails
