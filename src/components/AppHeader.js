@@ -46,6 +46,11 @@ const AppHeader = () => {
             </CNavLink>
           </CNavItem>
           <CNavItem>
+            <CNavLink to="/counterDetails" component={NavLink}>
+              Counter
+            </CNavLink>
+          </CNavItem>
+          <CNavItem>
             <CNavLink href="#">Settings</CNavLink>
           </CNavItem>
         </CHeaderNav>

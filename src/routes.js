@@ -3,6 +3,8 @@ import React from 'react'
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'))
 const UserList = React.lazy(() => import('./views/user/UserList'))
+const CounterList = React.lazy(() => import('./views/counter/CounterList'))
+const CounterPage = React.lazy(() => import('./views/counter/CounterPage'))
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'))
 
 // Base
@@ -55,6 +57,8 @@ const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/userDetails', name: 'User Details', element: UserList, exact: true },
+  { path: '/counterDetails', name: 'Counter Details', element: CounterList, exact: true },
+  { path: '/counterDetailsPage', name: 'Counter Details Page', element: CounterPage, exact: true },
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
